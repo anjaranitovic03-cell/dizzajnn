@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/organic-b6f95c32-e734-4239-9e5a-383feacd8bb2/styles.css">
+<script src="_ds/organic-b6f95c32-e734-4239-9e5a-383feacd8bb2/_ds_bundle.js"></script>
+<script src="image-slot.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&display=swap');
+:root{
+  --color-bg:#fcf3f5; --color-surface:#f7e7ec; --color-text:#3b2a30;
+  --color-divider: color-mix(in srgb,#3b2a30 14%,transparent);
+  --color-accent:#cf5f86; --color-accent-2:#86a56f;
+  --color-accent-100:#fdeef4; --color-accent-200:#f9dbe6; --color-accent-300:#f3b9cf; --color-accent-400:#e78bab; --color-accent-500:#cf5f86; --color-accent-600:#b64d72; --color-accent-700:#93395a; --color-accent-800:#6d2942; --color-accent-900:#481a2b;
+  --color-accent-2-100:#eef4ea; --color-accent-2-200:#dee9d4; --color-accent-2-300:#c6d7b6; --color-accent-2-400:#a6c091; --color-accent-2-500:#86a56f; --color-accent-2-600:#6b8a55; --color-accent-2-700:#526d40; --color-accent-2-800:#3a4d2c; --color-accent-2-900:#26321c;
+  --color-neutral-100:#f8eef1; --color-neutral-200:#ede0e3; --color-neutral-300:#dbcacd; --color-neutral-400:#c1abaf; --color-neutral-500:#a28c90; --color-neutral-600:#806d71; --color-neutral-700:#5f5054; --color-neutral-800:#43383b; --color-neutral-900:#2c2427;
+  --shadow-sm:0 1px 2px color-mix(in srgb,#7a3350 14%,transparent); --shadow-md:0 3px 12px color-mix(in srgb,#7a3350 16%,transparent); --shadow-lg:0 14px 36px color-mix(in srgb,#7a3350 20%,transparent);
+  --font-heading:"Comfortaa", system-ui, sans-serif; --font-heading-weight:700;
+}
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); text-wrap: pretty; overflow-x: clip; }
+  a { color: var(--color-accent-700); text-underline-offset: 3px; }
+  a:hover { color: var(--color-accent); }
+</style>
+</helmet>
+
+<nav class="nav" style="max-width:1200px;margin:0 auto;padding:16px clamp(20px,5vw,72px);gap:16px 22px;flex-wrap:wrap;">
+  <a href="index.html" class="nav-brand" style="text-decoration:none;color:var(--color-text);display:flex;align-items:center;gap:10px;">
+    <img src="uploads/urma-logo.png" alt="Urma logo" style="width:42px;height:42px;border-radius:50%;object-fit:cover;display:block;">
+  </a>
+  <a href="meni.html" aria-current="page" style="font-size:15px;color:var(--color-accent);">Meni</a>
+  <a href="o-nama.html" style="font-size:15px;">O nama</a>
+  <a href="kontakt.html" style="font-size:15px;">Kontakt</a>
+  <a href="kontakt.html" class="btn btn-primary" style="text-decoration:none;margin-left:auto;">Poruči tortu</a>
+</nav>
+
+<div style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,72px);">
+
+  <header style="padding:clamp(24px,4vw,48px) 0 clamp(28px,4vw,40px);max-width:56ch;">
+    <span style="display:block;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin-bottom:14px;">Naša ponuda</span>
+    <h1 style="font-family: Georgia; font-size: clamp(38px,5.4vw,68px); line-height: 1.05; letter-spacing: -0.02em; margin: 0">Meni</h1>
+    <p style="font-size:17px;line-height:1.65;margin:20px 0 0;color:color-mix(in srgb, var(--color-text) 80%, transparent);">Svaki komad je sirov, veganski i sladak od urmi, voća i agave. Cele torte primaju se dan ranije.</p>
+  </header>
+
+  <div style="display:flex;gap:10px;flex-wrap:wrap;padding-bottom:32px;">
+    <sc-for list="{{ cats }}" as="chip" hint-placeholder-count="4">
+      <button type="button" class="btn" onClick="{{ chip.onClick }}" style="{{ chip.style }}">{{ chip.label }}</button>
+    </sc-for>
+  </div>
+
+  <section style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;padding-bottom:clamp(48px,7vw,88px);">
+    <sc-for list="{{ items }}" as="p" hint-placeholder-count="6">
+      <article style="background:var(--color-surface);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column;transition:transform .2s ease, box-shadow .2s ease;" style-hover="transform:translateY(-6px);box-shadow:var(--shadow-md)">
+        <figure class="washed" style="margin:0;filter:saturate(1.08) contrast(1.03);">
+          <image-slot id="{{ p.slotId }}" shape="rect" src="{{ p.img }}" placeholder="{{ p.name }}" style="width:100%;aspect-ratio:4/3;"></image-slot>
+        </figure>
+        <div style="padding:20px 22px 24px;display:flex;flex-direction:column;gap:12px;flex:1;">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+            <span class="{{ p.tagClass }}">{{ p.catLabel }}</span>
+          </div>
+          <h3 style="font-family:var(--font-heading);font-size:23px;margin:0;">{{ p.name }}</h3>
+          <p style="font-size:13.5px;line-height:1.55;margin:0;color:color-mix(in srgb, var(--color-text) 72%, transparent);">{{ p.ingredients }}</p>
+        </div>
+      </article>
+    </sc-for>
+  </section>
+
+  <section style="padding:0 0 clamp(48px,7vw,88px);">
+    <div style="background:var(--color-accent-2-100);border-radius:calc(2 * var(--radius-lg));padding:clamp(32px,5vw,56px);display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;">
+      <div>
+        <h2 style="font-family:var(--font-heading);font-size:clamp(24px,3vw,34px);margin:0;letter-spacing:-0.015em;">Torta za posebnu priliku?</h2>
+        <p style="font-size:15px;line-height:1.6;margin:14px 0 0;max-width:44ch;color:color-mix(in srgb, var(--color-text) 78%, transparent);">Pravimo torte po meri — javite ukus i broj gostiju, mi predlažemo ostalo.</p>
+      </div>
+      <a href="kontakt.html" class="btn btn-primary" style="text-decoration:none;font-size:14px;padding:12px 24px;">Poruči po meri</a>
+    </div>
+  </section>
+
+  <footer style="padding:clamp(40px,5vw,64px) 0;border-top:1px solid var(--color-divider);display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:28px;">
+    <div>
+      <p style="font-family:var(--font-heading);font-size:22px;margin:0 0 8px;">Urma</p>
+      <p style="font-size:14px;line-height:1.6;margin:0;color:color-mix(in srgb, var(--color-text) 70%, transparent);max-width:26ch;">Sirovi veganski dezerti od prirodnih sastojaka.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;font-size:14px;">
+      <a href="index.html">Početna</a>
+      <a href="o-nama.html">O nama</a>
+      <a href="kontakt.html">Kontakt</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;font-size:14px;color:color-mix(in srgb, var(--color-text) 70%, transparent);">
+      <span>Vatroslava Jagića 14, Beograd</span>
+      <span>063 549 201</span>
+      <a href="https://instagram.com/urma_poslasticarnica" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { cat: 'sve' };
+
+  products = [
+    { name: 'Čoko-malina', cat: 'kolaci', price: '390 din', slotId: 'm-cokomalina', img: 'uploads/IMG_6971.jpeg',
+      ingredients: 'Badem, urme, kakao, kakao puter, organsko pirinčano mleko, maline.' },
+    { name: 'Čoko-vanila', cat: 'kolaci', price: '390 din', slotId: 'm-cokovanila', img: 'uploads/IMG_6933.jpeg',
+      ingredients: 'Lešnik, urme, kakao, kakao puter, pirinčano mleko, indijski orah, agava, kokosovo ulje, limun.' },
+    { name: 'Čoko-narandža', cat: 'kolaci', price: '390 din', slotId: 'm-cokonarandza', img: 'uploads/IMG_6934.jpeg',
+      ingredients: 'Urme, indijski orah, kakao, kakao puter, pirinčano mleko, narandža, kokosovo ulje, agava.' },
+    { name: 'Čoko-kokos', cat: 'kolaci', price: '390 din', slotId: 'm-cokokokos', img: 'uploads/IMG_6937.jpeg',
+      ingredients: 'Pečeni lešnici, urme, kakao, kakao puter, indijski orah, pirinčano mleko, kokosovo ulje, limun.' },
+    { name: 'Šargarepa torta', cat: 'torte', price: '4200 din', slotId: 'm-sargarepa', img: 'uploads/IMG_6983.jpeg',
+      ingredients: 'Orah, urme, cimet, anis, muskatni oraščić, šargarepa, pirinčano mleko, kakao puter, kokosovo ulje, limun, agava.' },
+    { name: 'Borovnica torta', cat: 'torte', price: '4400 din', slotId: 'm-borovnica', img: 'uploads/IMG_6968.jpeg',
+      ingredients: 'Borovnice, višnje, limun, badem, kokosovo ulje, urme, indijski orah, agava, pirinčano mleko, kakao puter.' },
+    { name: 'Narandža torta', cat: 'torte', price: '4200 din', slotId: 'm-narandza', img: 'uploads/IMG_7020.jpeg',
+      ingredients: 'Urme, orah, kakao, kakao puter, indijski orah, pirinčano mleko, kokosovo ulje, agava, kora i sok narandže.' },
+    { name: 'Čoko-orah torta', cat: 'torte', price: '', slotId: 'm-cokoorah', img: 'uploads/IMG_6984.jpeg',
+      ingredients: 'Orah, urme, kakao, kakao puter, indijski orah, pirinčano mleko, kokosovo ulje, agava.' },
+    { name: 'Čoko-pistaći torta', cat: 'torte', price: '', slotId: 'm-cokopistaci', img: 'uploads/IMG_7019.png',
+      ingredients: 'Pistaći, urme, kakao, kakao puter, indijski orah, pirinčano mleko, kokosovo ulje, agava.' },
+    { name: 'Limun torta', cat: 'torte', price: '', slotId: 'm-limun', img: 'uploads/IMG_6982.jpeg',
+      ingredients: 'Limun, badem, urme, indijski orah, kokosovo ulje, pirinčano mleko, agava.' },
+    { name: 'Čoko-višnja torta', cat: 'torte', price: '', slotId: 'm-cokovisnja', img: 'uploads/IMG_6980.jpeg',
+      ingredients: 'Višnje, urme, kakao, kakao puter, indijski orah, pirinčano mleko, kokosovo ulje, agava.' },
+    { name: 'Veganske kuglice', cat: 'zalogaji', price: '180 din', slotId: 'm-kuglice', img: 'uploads/IMG_6975.jpeg',
+      ingredients: 'Urme i orašasti plodovi, uvaljani u kakao ili kokos. Zalogaj energije.' },
+    { name: 'Narandža kuglice', cat: 'zalogaji', price: '', slotId: 'm-kuglice-narandza', img: 'uploads/IMG_6974.jpeg',
+      ingredients: 'Urme, orašasti plodovi, kora i sok narandže. Uvaljane u kokos.' },
+    { name: 'Limun kuglice', cat: 'zalogaji', price: '', slotId: 'm-kuglice-limun', img: 'uploads/IMG_6973.jpeg',
+      ingredients: 'Urme, orašasti plodovi, limun. Osveženje u zalogaju.' },
+    { name: 'Lešnik kuglice', cat: 'zalogaji', price: '', slotId: 'm-kuglice-lesnik', img: 'uploads/IMG_6972.jpeg',
+      ingredients: 'Urme, lešnik i kakao. Uvaljane u mlevene lešnike.' },
+  ];
+
+  catLabels = { kolaci: 'Kolač', torte: 'Torta', zalogaji: 'Zalogaj' };
+  tagClasses = { kolaci: 'tag tag-accent', torte: 'tag tag-accent-2', zalogaji: 'tag tag-neutral' };
+
+  renderVals() {
+    const active = this.state.cat;
+    const defs = [
+      { key: 'sve', label: 'Sve' },
+      { key: 'torte', label: 'Torte' },
+      { key: 'kolaci', label: 'Kolači' },
+      { key: 'zalogaji', label: 'Zalogaji' },
+    ];
+    const cats = defs.map(d => {
+      const isActive = d.key === active;
+      const style = isActive
+        ? 'font-size:14px;padding:9px 20px;background:var(--color-accent);color:var(--color-bg);border:1px solid var(--color-accent);'
+        : 'font-size:14px;padding:9px 20px;background:transparent;color:var(--color-text);border:1px solid var(--color-divider);';
+      return { ...d, style, onClick: () => this.setState({ cat: d.key }) };
+    });
+
+    const items = this.products
+      .filter(p => active === 'sve' || p.cat === active)
+      .map(p => ({
+        ...p,
+        catLabel: this.catLabels[p.cat],
+        tagClass: this.tagClasses[p.cat],
+      }));
+
+    return { cats, items };
+  }
+}
+</script>
+</body>
+</html>

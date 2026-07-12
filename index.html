@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/organic-b6f95c32-e734-4239-9e5a-383feacd8bb2/styles.css">
+<script src="_ds/organic-b6f95c32-e734-4239-9e5a-383feacd8bb2/_ds_bundle.js"></script>
+<script src="image-slot.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&display=swap');
+:root{
+  --color-bg:#fcf3f5; --color-surface:#f7e7ec; --color-text:#3b2a30;
+  --color-divider: color-mix(in srgb,#3b2a30 14%,transparent);
+  --color-accent:#cf5f86; --color-accent-2:#86a56f;
+  --color-accent-100:#fdeef4; --color-accent-200:#f9dbe6; --color-accent-300:#f3b9cf; --color-accent-400:#e78bab; --color-accent-500:#cf5f86; --color-accent-600:#b64d72; --color-accent-700:#93395a; --color-accent-800:#6d2942; --color-accent-900:#481a2b;
+  --color-accent-2-100:#eef4ea; --color-accent-2-200:#dee9d4; --color-accent-2-300:#c6d7b6; --color-accent-2-400:#a6c091; --color-accent-2-500:#86a56f; --color-accent-2-600:#6b8a55; --color-accent-2-700:#526d40; --color-accent-2-800:#3a4d2c; --color-accent-2-900:#26321c;
+  --color-neutral-100:#f8eef1; --color-neutral-200:#ede0e3; --color-neutral-300:#dbcacd; --color-neutral-400:#c1abaf; --color-neutral-500:#a28c90; --color-neutral-600:#806d71; --color-neutral-700:#5f5054; --color-neutral-800:#43383b; --color-neutral-900:#2c2427;
+  --shadow-sm:0 1px 2px color-mix(in srgb,#7a3350 14%,transparent); --shadow-md:0 3px 12px color-mix(in srgb,#7a3350 16%,transparent); --shadow-lg:0 14px 36px color-mix(in srgb,#7a3350 20%,transparent);
+  --font-heading:"Comfortaa", system-ui, sans-serif; --font-heading-weight:700;
+}
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); text-wrap: pretty; overflow-x: clip; }
+  a { color: var(--color-accent-700); text-underline-offset: 3px; }
+  a:hover { color: var(--color-accent); }
+  @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+</style>
+</helmet>
+
+<nav class="nav" style="max-width:1200px;margin:0 auto;padding:16px clamp(20px,5vw,72px);gap:16px 22px;flex-wrap:wrap;">
+  <a href="index.html" class="nav-brand" style="text-decoration: none; color: var(--color-text); display: flex; align-items: center; gap: 10px; font-family: Georgia; font-weight: 800">
+    <img src="uploads/urma-logo.png" alt="Urma logo" style="width:42px;height:42px;border-radius:50%;object-fit:cover;display:block;">
+  </a>
+  <a href="meni.html" style="font-size:15px;">Meni</a>
+  <a href="o-nama.html" style="font-size:15px;">O nama</a>
+  <a href="kontakt.html" style="font-size:15px;">Kontakt</a>
+  <a href="kontakt.html" class="btn btn-primary" style="text-decoration:none;margin-left:auto;">Poruči tortu</a>
+</nav>
+
+<div style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,72px);">
+
+  <section style="position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(28px,5vw,72px);align-items:center;padding:clamp(28px,5vw,60px) 0 clamp(40px,6vw,80px);">
+    <div style="position:absolute;right:-160px;top:-140px;width:380px;height:380px;border-radius:50%;background:var(--color-accent-2-200);z-index:-1;pointer-events:none;"></div>
+    <div>
+      <span style="display:inline-flex;align-items:center;gap:8px;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin-bottom:20px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="var(--color-accent)" style="flex:none;"><path d="M12 21s-7.5-4.9-10-9.2C.4 8.7 1.9 5 5.3 5c2 0 3.4 1.1 4.2 2.3.4.6 1.6.6 2 0C12.3 6.1 13.7 5 15.7 5 19.1 5 20.6 8.7 22 11.8 19.5 16.1 12 21 12 21z"></path></svg>Sirovo · Veganski · Bez rafinisanog šećera</span>
+      <h1 style="font-family:var(--font-heading);font-size:clamp(42px,6vw,78px);line-height:1.04;letter-spacing:-0.02em;margin:0;">
+        <span style="display: block; font-weight: 900; font-family: Georgia">Slatko koje</span>
+        <span style="display: block; font-family: Georgia">priroda</span>
+        <span style="display: block; color: var(--color-accent); font-family: Georgia">potpisuje.</span>
+      </h1>
+      <p style="font-size:18px;line-height:1.65;max-width:46ch;margin:26px 0 0;color:color-mix(in srgb, var(--color-text) 82%, transparent);">
+        Torte i kolači spremljeni bez pečenja, od urmi, orašastih plodova i voća. Bez belog brašna, bez rafinisanog šećera, bez sastojaka životinjskog porekla — samo ono što biste i sami stavili u činiju.
+      </p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:32px;">
+        <a href="meni.html" class="btn btn-primary" style="text-decoration: none; font-size: 14px; padding: 12px 22px">Pogledaj ponudu</a>
+        <a href="o-nama.html" class="btn btn-secondary" style="text-decoration:none;font-size:14px;padding:12px 22px;">Naša priča</a>
+      </div>
+    </div>
+    <figure style="margin:0;border-radius:calc(2 * var(--radius-lg));overflow:hidden;box-shadow:var(--shadow-lg);animation:floaty 7s ease-in-out infinite;">
+      <image-slot id="hero-cake" shape="rect" src="uploads/slika1.jpeg" placeholder="Prevuci foto torte" style="width:100%;aspect-ratio:4/5;"></image-slot>
+    </figure>
+  </section>
+
+  <section style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;padding:clamp(20px,3vw,36px) 0;">
+    <div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:26px 24px;">
+      <p style="font-family: Georgia; font-size: 40px; color: var(--color-accent); margin: 0; line-height: 1; font-weight: 700">100%</p>
+      <p style="font-size:14px;margin:10px 0 0;color:color-mix(in srgb, var(--color-text) 72%, transparent);">biljni sastojci</p>
+    </div>
+    <div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:26px 24px;">
+      <p style="font-family: Georgia; font-size: 40px; color: var(--color-accent-2-700); margin: 0; line-height: 1; font-weight: 700">0g</p>
+      <p style="font-size:14px;margin:10px 0 0;color:color-mix(in srgb, var(--color-text) 72%, transparent);">rafinisanog šećera</p>
+    </div>
+    <div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:26px 24px;">
+      <p style="font-family: Georgia; font-size: 40px; color: var(--color-accent); margin: 0; line-height: 1; font-weight: 700">42°C</p>
+      <p style="font-size:14px;margin:10px 0 0;color:color-mix(in srgb, var(--color-text) 72%, transparent);">maksimalna temperatura pripreme</p>
+    </div>
+  </section>
+
+  <section style="padding:clamp(48px,7vw,88px) 0;">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:36px;">
+      <div>
+        <span style="display:block;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin-bottom:12px;">Iz naše vitrine</span>
+        <h2 style="font-family: Georgia; font-size: clamp(30px,4vw,46px); margin: 0; letter-spacing: -0.015em; font-weight: 700">Omiljeni komadi</h2>
+      </div>
+      <a href="meni.html" class="btn btn-ghost" style="text-decoration:none;font-size:14px;">Ceo meni →</a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;">
+
+      <article style="display:flex;flex-direction:column;gap:14px;transition:transform .2s ease;" style-hover="transform:translateY(-6px)">
+        <figure style="margin:0;border-radius:var(--radius-lg);overflow:hidden;filter:saturate(0.82);">
+          <image-slot id="feat-1" shape="rect" src="uploads/WhatsApp Image 2026-07-11 at 23.53.51 (2).jpeg" placeholder="Čoko-malina" style="width:100%;aspect-ratio:1/1;"></image-slot>
+        </figure>
+        <div style="display:flex;gap:8px;">
+          <span class="tag tag-accent">Kolač</span>
+          <span class="tag tag-accent-2">Bez glutena</span>
+        </div>
+        <h3 style="font-family:var(--font-heading);font-size:22px;margin:0;">Čoko-malina</h3>
+        <p style="font-size:14px;line-height:1.55;margin:0;color:color-mix(in srgb, var(--color-text) 75%, transparent);">Badem i urme u osnovi, kremasti kakao sloj i sveže maline.</p>
+      </article>
+
+      <article style="display:flex;flex-direction:column;gap:14px;transition:transform .2s ease;" style-hover="transform:translateY(-6px)">
+        <figure style="margin:0;border-radius:var(--radius-lg);overflow:hidden;">
+          <image-slot id="feat-2" shape="rect" src="uploads/WhatsApp Image 2026-07-11 at 23.53.51 (1).jpeg" placeholder="Šargarepa torta" style="width:100%;aspect-ratio:1/1;"></image-slot>
+        </figure>
+        <div style="display:flex;gap:8px;">
+          <span class="tag tag-accent">Torta</span>
+          <span class="tag tag-accent-2">Začini</span>
+        </div>
+        <h3 style="font-family:var(--font-heading);font-size:22px;margin:0;">Šargarepa torta</h3>
+        <p style="font-size:14px;line-height:1.55;margin:0;color:color-mix(in srgb, var(--color-text) 75%, transparent);">Orah i šargarepa uz cimet, anis i muskatni oraščić.</p>
+      </article>
+
+      <article style="display:flex;flex-direction:column;gap:14px;transition:transform .2s ease;" style-hover="transform:translateY(-6px)">
+        <figure style="margin:0;border-radius:var(--radius-lg);overflow:hidden;">
+          <image-slot id="feat-3" shape="rect" src="uploads/WhatsApp Image 2026-07-11 at 23.53.51.jpeg" placeholder="Borovnica torta" style="width:100%;aspect-ratio:1/1;"></image-slot>
+        </figure>
+        <div style="display:flex;gap:8px;">
+          <span class="tag tag-accent">Torta</span>
+          <span class="tag tag-accent-2">Voće</span>
+        </div>
+        <h3 style="font-family:var(--font-heading);font-size:22px;margin:0;">Borovnica torta</h3>
+        <p style="font-size:14px;line-height:1.55;margin:0;color:color-mix(in srgb, var(--color-text) 75%, transparent);">Borovnice i višnje na osnovi od badema i indijskog oraha.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <section style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(28px,5vw,72px);align-items:center;padding:clamp(40px,6vw,80px) 0;">
+    <figure style="margin:0;border-radius:calc(2 * var(--radius-lg));overflow:hidden;box-shadow:var(--shadow-md);">
+      <video src="uploads/WhatsApp Video 2026-07-12 at 00.00.18.mp4" autoplay="" loop="" muted="" playsinline="" style="display:block;width:100%;aspect-ratio:4/5;object-fit:cover;"></video>
+    </figure>
+    <div>
+      <span style="display:block;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin-bottom:12px;">Zašto sirovo &amp; veganski</span>
+      <h2 style="font-family: Georgia; font-size: clamp(28px,3.6vw,42px); margin: 0 0 8px; letter-spacing: -0.015em">Sve živo ostaje živo</h2>
+      <p style="font-size:16px;line-height:1.65;max-width:50ch;margin:18px 0 0;color:color-mix(in srgb, var(--color-text) 80%, transparent);">Ne pečemo. Sastojke pripremamo na niskoj temperaturi kako bi enzimi, vlakna i minerali ostali netaknuti. Slast dolazi od urmi, agave i voća — nikad od belog šećera.</p>
+      <ul style="list-style:none;padding:0;margin:24px 0 0;display:flex;flex-direction:column;gap:14px;">
+        <li style="display: flex; gap: 12px; align-items: flex-start; font-size: 15px; line-height: 1.5; text-decoration-line: underline"><span style="width:10px;height:10px;border-radius:50%;background:var(--color-accent);margin-top:7px;flex:none;"></span>Urme umesto rafinisanog šećera</li>
+        <li style="display: flex; gap: 12px; align-items: flex-start; font-size: 15px; line-height: 1.5; text-decoration-line: underline"><span style="width: 10px; height: 10px; border-radius: 50%; margin-top: 7px; flex: none; background-color: #CF5F86"></span>Orašasti plodovi i kokosovo ulje umesto putera</li>
+        <li style="display: flex; gap: 12px; align-items: flex-start; font-size: 15px; line-height: 1.5; text-decoration-line: underline"><span style="width:10px;height:10px;border-radius:50%;background:var(--color-accent);margin-top:7px;flex:none;"></span>Bez glutena, bez laktoze, bez jaja</li>
+      </ul>
+    </div>
+  </section>
+
+  <section style="padding:clamp(40px,6vw,80px) 0;">
+    <div style="background:var(--color-accent-2-100);border-radius:calc(2 * var(--radius-lg));padding:clamp(32px,5vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:36px;align-items:center;">
+      <div>
+        <span style="display:block;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-2-700);margin-bottom:12px;">Poseti nas</span>
+        <h2 style="font-family: Georgia; font-size: clamp(26px,3vw,36px); margin: 0; letter-spacing: -0.015em">Sveže svakog jutra</h2>
+        <p style="font-size: 15px; line-height: 1.6; margin: 16px 0 0; max-width: 38ch; color: #CF5F86; font-weight: 700; text-decoration-line: none; font-style: normal">Svrati na parče i kafu, ili poruči celu tortu dan ranije.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <p style="margin: 0; font-family: var(--font-heading); font-size: 19px; text-decoration-line: none">Radno vreme</p>
+        <p style="margin:0;font-size:15px;color:color-mix(in srgb, var(--color-text) 78%, transparent);">Pon–Sub · 10–20h</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <p style="margin:0;font-family:var(--font-heading);font-size:19px;">Gde smo</p>
+        <p style="margin:0;font-size:15px;color:color-mix(in srgb, var(--color-text) 78%, transparent);">Vatroslava Jagića 14, Beograd</p>
+        <a href="kontakt.html" class="btn btn-primary" style="text-decoration:none;font-size:13px;margin-top:8px;align-self:flex-start;">Kontakt i mapa</a>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(40px,6vw,80px) 0 clamp(24px,4vw,48px);">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:28px;">
+      <h2 style="font-family: Georgia; font-size: clamp(26px,3vw,36px); margin: 0; letter-spacing: -0.015em; color: #CF5F86; font-weight: 800">@urma_poslasticarnica</h2>
+      <a href="https://instagram.com/urma_poslasticarnica" target="_blank" rel="noopener" class="btn btn-ghost" style="text-decoration:none;font-size:14px;">Prati na Instagramu →</a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;">
+      <figure style="margin:0;border-radius:var(--radius-md);overflow:hidden;"><image-slot id="ig-1" shape="rect" src="uploads/WhatsApp Image 2026-07-12 at 00.04.22 (1).jpeg" placeholder="IG" style="width:100%;aspect-ratio:1/1;"></image-slot></figure>
+      <figure style="margin:0;border-radius:var(--radius-md);overflow:hidden;"><image-slot id="ig-2" shape="rect" src="uploads/WhatsApp Image 2026-07-12 at 00.04.22.jpeg" placeholder="IG" style="width:100%;aspect-ratio:1/1;"></image-slot></figure>
+      <figure style="margin:0;border-radius:var(--radius-md);overflow:hidden;"><image-slot id="ig-3" shape="rect" src="uploads/WhatsApp Image 2026-07-12 at 00.04.21 (1).jpeg" placeholder="IG" style="width:100%;aspect-ratio:1/1;"></image-slot></figure>
+      <figure style="margin:0;border-radius:var(--radius-md);overflow:hidden;"><image-slot id="ig-4" shape="rect" src="uploads/WhatsApp Image 2026-07-12 at 00.04.21.jpeg" placeholder="IG" style="width:100%;aspect-ratio:1/1;"></image-slot></figure>
+    </div>
+  </section>
+
+  <footer style="padding:clamp(40px,5vw,64px) 0;border-top:1px solid var(--color-divider);margin-top:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:28px;">
+    <div>
+      <p style="font-family:var(--font-heading);font-size:22px;margin:0 0 8px;">Urma</p>
+      <p style="font-size:14px;line-height:1.6;margin:0;color:color-mix(in srgb, var(--color-text) 70%, transparent);max-width:26ch;">Sirovi veganski dezerti od prirodnih sastojaka.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;font-size:14px;">
+      <a href="meni.html">Meni</a>
+      <a href="o-nama.html">O nama</a>
+      <a href="kontakt.html">Kontakt</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;font-size:14px;color:color-mix(in srgb, var(--color-text) 70%, transparent);">
+      <span>Vatroslava Jagića 14, Beograd</span>
+      <span>063 549 201</span>
+      <a href="https://instagram.com/urma_poslasticarnica" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+</body>
+</html>

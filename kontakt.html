@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/organic-b6f95c32-e734-4239-9e5a-383feacd8bb2/styles.css">
+<script src="_ds/organic-b6f95c32-e734-4239-9e5a-383feacd8bb2/_ds_bundle.js"></script>
+<script src="image-slot.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&display=swap');
+:root{
+  --color-bg:#fcf3f5; --color-surface:#f7e7ec; --color-text:#3b2a30;
+  --color-divider: color-mix(in srgb,#3b2a30 14%,transparent);
+  --color-accent:#cf5f86; --color-accent-2:#86a56f;
+  --color-accent-100:#fdeef4; --color-accent-200:#f9dbe6; --color-accent-300:#f3b9cf; --color-accent-400:#e78bab; --color-accent-500:#cf5f86; --color-accent-600:#b64d72; --color-accent-700:#93395a; --color-accent-800:#6d2942; --color-accent-900:#481a2b;
+  --color-accent-2-100:#eef4ea; --color-accent-2-200:#dee9d4; --color-accent-2-300:#c6d7b6; --color-accent-2-400:#a6c091; --color-accent-2-500:#86a56f; --color-accent-2-600:#6b8a55; --color-accent-2-700:#526d40; --color-accent-2-800:#3a4d2c; --color-accent-2-900:#26321c;
+  --color-neutral-100:#f8eef1; --color-neutral-200:#ede0e3; --color-neutral-300:#dbcacd; --color-neutral-400:#c1abaf; --color-neutral-500:#a28c90; --color-neutral-600:#806d71; --color-neutral-700:#5f5054; --color-neutral-800:#43383b; --color-neutral-900:#2c2427;
+  --shadow-sm:0 1px 2px color-mix(in srgb,#7a3350 14%,transparent); --shadow-md:0 3px 12px color-mix(in srgb,#7a3350 16%,transparent); --shadow-lg:0 14px 36px color-mix(in srgb,#7a3350 20%,transparent);
+  --font-heading:"Comfortaa", system-ui, sans-serif; --font-heading-weight:700;
+}
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); text-wrap: pretty; overflow-x: clip; }
+  a { color: var(--color-accent-700); text-underline-offset: 3px; }
+  a:hover { color: var(--color-accent); }
+  @keyframes cupcake-bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+  @keyframes marker-pulse { 0%,100% { transform: scaleX(1); opacity:.35; } 50% { transform: scaleX(.7); opacity:.2; } }
+</style>
+</helmet>
+
+<nav class="nav" style="max-width:1200px;margin:0 auto;padding:16px clamp(20px,5vw,72px);gap:16px 22px;flex-wrap:wrap;">
+  <a href="index.html" class="nav-brand" style="text-decoration:none;color:var(--color-text);display:flex;align-items:center;gap:10px;">
+    <img src="uploads/urma-logo.png" alt="Urma logo" style="width:42px;height:42px;border-radius:50%;object-fit:cover;display:block;">
+  </a>
+  <a href="meni.html" style="font-size:15px;">Meni</a>
+  <a href="o-nama.html" style="font-size:15px;">O nama</a>
+  <a href="kontakt.html" aria-current="page" style="font-size:15px;color:var(--color-accent);">Kontakt</a>
+  <a href="kontakt.html" class="btn btn-primary" style="text-decoration:none;margin-left:auto;">Poruči tortu</a>
+</nav>
+
+<div style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,72px);">
+
+  <header style="padding:clamp(28px,5vw,60px) 0 clamp(28px,4vw,44px);max-width:56ch;">
+    <span style="display:block;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin-bottom:14px;">Javi se</span>
+    <h1 style="font-family:var(--font-heading);font-size:clamp(38px,5.4vw,68px);line-height:1.05;letter-spacing:-0.02em;margin:0;">Kontakt</h1>
+    <p style="font-size:17px;line-height:1.65;margin:20px 0 0;color:color-mix(in srgb, var(--color-text) 80%, transparent);">Poruči tortu po meri, pitaj za sastojke ili samo svrati. Odgovaramo u toku istog dana.</p>
+  </header>
+
+  <section style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(28px,5vw,64px);align-items:start;padding-bottom:clamp(48px,7vw,88px);">
+
+    <div style="display:flex;flex-direction:column;gap:28px;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:20px;">
+        <div>
+          <p style="font-family:var(--font-heading);font-size:18px;margin:0 0 6px;">Adresa</p>
+          <p style="font-size:15px;margin:0;line-height:1.55;color:color-mix(in srgb, var(--color-text) 78%, transparent);">Vatroslava Jagića 14<br>11000 Beograd</p>
+        </div>
+        <div>
+          <p style="font-family:var(--font-heading);font-size:18px;margin:0 0 6px;">Kontakt</p>
+          <p style="font-size:15px;margin:0;line-height:1.55;color:color-mix(in srgb, var(--color-text) 78%, transparent);">063 549 201<br>urmabg@gmail.com</p>
+        </div>
+        <div>
+          <p style="font-family:var(--font-heading);font-size:18px;margin:0 0 6px;">Radno vreme</p>
+          <p style="font-size:15px;margin:0;line-height:1.55;color:color-mix(in srgb, var(--color-text) 78%, transparent);">Pon–Sub · 10–20h</p>
+        </div>
+        <div>
+          <p style="font-family:var(--font-heading);font-size:18px;margin:0 0 6px;">Prati nas</p>
+          <p style="font-size:15px;margin:0;line-height:1.55;"><a href="https://instagram.com/urma_poslasticarnica" target="_blank" rel="noopener">@urma_poslasticarnica</a></p>
+        </div>
+      </div>
+      <figure style="margin:0;border-radius:calc(2 * var(--radius-lg));overflow:hidden;box-shadow:var(--shadow-md);position:relative;background:var(--color-accent-2-200);aspect-ratio:16/10;">
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:2px;color:var(--color-accent-2-700);">
+          <svg width="58" height="70" viewBox="0 0 52 66" style="filter:drop-shadow(0 8px 10px color-mix(in srgb,#7a3350 28%,transparent));animation:cupcake-bob 3.2s ease-in-out infinite;">
+            <path d="M26 11 q3 -5 6.5 -5.5" fill="none" stroke="#6b8a55" stroke-width="2.2" stroke-linecap="round"/>
+            <circle cx="26" cy="14.5" r="4.6" fill="#93395a"/>
+            <circle cx="24.3" cy="12.8" r="1.3" fill="#fff" opacity="0.55"/>
+            <g fill="#cf5f86">
+              <ellipse cx="26" cy="32" rx="15" ry="7"/>
+              <circle cx="16" cy="28" r="6.6"/>
+              <circle cx="26" cy="22.5" r="7.6"/>
+              <circle cx="36" cy="28" r="6.6"/>
+            </g>
+            <ellipse cx="21" cy="24" rx="3" ry="2" fill="#f3b9cf" opacity="0.7"/>
+            <path d="M13 34 H39 L35.4 59 a3 3 0 0 1 -3 2.6 H19.6 a3 3 0 0 1 -3 -2.6 Z" fill="#f8d7e0"/>
+            <g stroke="#e78bab" stroke-width="2" stroke-linecap="round" opacity="0.8">
+              <line x1="20" y1="37" x2="18.6" y2="59"/>
+              <line x1="26" y1="37" x2="26" y2="59"/>
+              <line x1="32" y1="37" x2="33.4" y2="59"/>
+            </g>
+          </svg>
+          <span style="width:22px;height:7px;border-radius:50%;background:#3b2a30;margin-top:-2px;animation:marker-pulse 3.2s ease-in-out infinite;"></span>
+          <span style="font-family:var(--font-heading);font-size:16px;margin-top:12px;">Vatroslava Jagića 14, Beograd</span>
+        </div>
+      </figure>
+    </div>
+
+    <div style="background:var(--color-surface);border-radius:calc(2 * var(--radius-lg));padding:clamp(28px,4vw,44px);">
+      <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:14px;align-items:flex-start;padding:20px 0;">
+          <span style="width:52px;height:52px;border-radius:50%;background:var(--color-accent-2-500);display:inline-flex;align-items:center;justify-content:center;color:var(--color-bg);font-family:var(--font-heading);font-size:26px;">✓</span>
+          <h2 style="font-family:var(--font-heading);font-size:26px;margin:0;">Hvala!</h2>
+          <p style="font-size:15px;line-height:1.6;margin:0;color:color-mix(in srgb, var(--color-text) 78%, transparent);">Poruka je poslata. Javljamo se u toku dana.</p>
+          <button type="button" class="btn btn-secondary" onClick="{{ reset }}" style="font-size:14px;">Pošalji još jednu</button>
+        </div>
+      </sc-if>
+      <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+        <form onSubmit="{{ submit }}" style="display:flex;flex-direction:column;gap:18px;">
+          <h2 style="font-family:var(--font-heading);font-size:24px;margin:0;">Pošalji upit</h2>
+          <div class="field">
+            <label for="k-ime">Ime i prezime</label>
+            <input class="input" id="k-ime" type="text" required placeholder="Vaše ime">
+          </div>
+          <div class="field">
+            <label for="k-email">Email</label>
+            <input class="input" id="k-email" type="email" required placeholder="vi@email.com">
+          </div>
+          <div class="field">
+            <label for="k-tip">Šta vas zanima</label>
+            <div class="seg" style="width:100%;">
+              <label class="seg-opt" style="flex:1;justify-content:center;"><input type="radio" name="tip" checked>Parče</label>
+              <label class="seg-opt" style="flex:1;justify-content:center;"><input type="radio" name="tip">Cela torta</label>
+              <label class="seg-opt" style="flex:1;justify-content:center;"><input type="radio" name="tip">Ostalo</label>
+            </div>
+          </div>
+          <div class="field">
+            <label for="k-poruka">Poruka</label>
+            <textarea class="input" id="k-poruka" placeholder="Ukus, broj gostiju, datum..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" style="font-size:14px;padding:12px;">Pošalji upit</button>
+        </form>
+      </sc-if>
+    </div>
+
+  </section>
+
+  <footer style="padding:clamp(40px,5vw,64px) 0;border-top:1px solid var(--color-divider);display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:28px;">
+    <div>
+      <p style="font-family:var(--font-heading);font-size:22px;margin:0 0 8px;">Urma</p>
+      <p style="font-size:14px;line-height:1.6;margin:0;color:color-mix(in srgb, var(--color-text) 70%, transparent);max-width:26ch;">Sirovi veganski dezerti od prirodnih sastojaka.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;font-size:14px;">
+      <a href="index.html">Početna</a>
+      <a href="meni.html">Meni</a>
+      <a href="o-nama.html">O nama</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;font-size:14px;color:color-mix(in srgb, var(--color-text) 70%, transparent);">
+      <span>Vatroslava Jagića 14, Beograd</span>
+      <span>063 549 201</span>
+      <a href="https://instagram.com/urma_poslasticarnica" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { sent: false };
+  renderVals() {
+    return {
+      sent: this.state.sent,
+      notSent: !this.state.sent,
+      submit: (e) => { e.preventDefault(); this.setState({ sent: true }); },
+      reset: () => this.setState({ sent: false }),
+    };
+  }
+}
+</script>
+</body>
+</html>

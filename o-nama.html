@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/organic-b6f95c32-e734-4239-9e5a-383feacd8bb2/styles.css">
+<script src="_ds/organic-b6f95c32-e734-4239-9e5a-383feacd8bb2/_ds_bundle.js"></script>
+<script src="image-slot.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&display=swap');
+:root{
+  --color-bg:#fcf3f5; --color-surface:#f7e7ec; --color-text:#3b2a30;
+  --color-divider: color-mix(in srgb,#3b2a30 14%,transparent);
+  --color-accent:#cf5f86; --color-accent-2:#86a56f;
+  --color-accent-100:#fdeef4; --color-accent-200:#f9dbe6; --color-accent-300:#f3b9cf; --color-accent-400:#e78bab; --color-accent-500:#cf5f86; --color-accent-600:#b64d72; --color-accent-700:#93395a; --color-accent-800:#6d2942; --color-accent-900:#481a2b;
+  --color-accent-2-100:#eef4ea; --color-accent-2-200:#dee9d4; --color-accent-2-300:#c6d7b6; --color-accent-2-400:#a6c091; --color-accent-2-500:#86a56f; --color-accent-2-600:#6b8a55; --color-accent-2-700:#526d40; --color-accent-2-800:#3a4d2c; --color-accent-2-900:#26321c;
+  --color-neutral-100:#f8eef1; --color-neutral-200:#ede0e3; --color-neutral-300:#dbcacd; --color-neutral-400:#c1abaf; --color-neutral-500:#a28c90; --color-neutral-600:#806d71; --color-neutral-700:#5f5054; --color-neutral-800:#43383b; --color-neutral-900:#2c2427;
+  --shadow-sm:0 1px 2px color-mix(in srgb,#7a3350 14%,transparent); --shadow-md:0 3px 12px color-mix(in srgb,#7a3350 16%,transparent); --shadow-lg:0 14px 36px color-mix(in srgb,#7a3350 20%,transparent);
+  --font-heading:"Comfortaa", system-ui, sans-serif; --font-heading-weight:700;
+}
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); text-wrap: pretty; overflow-x: clip; }
+  a { color: var(--color-accent-700); text-underline-offset: 3px; }
+  a:hover { color: var(--color-accent); }
+  @media (max-width: 760px){ .galerija { grid-template-columns: repeat(2,1fr) !important; } }
+  @media (max-width: 460px){ .galerija { grid-template-columns: 1fr !important; grid-auto-rows: 220px !important; } }
+  .repos { cursor: grab; touch-action: none; user-select: none; -webkit-user-drag: none; }
+  .repos:active { cursor: grabbing; }
+</style>
+<script>
+(function(){
+  var KEY = 'urma-img-pos';
+  function load(){ try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch(e){ return {}; } }
+  function save(m){ try { localStorage.setItem(KEY, JSON.stringify(m)); } catch(e){} }
+  function keyFor(img){ return (img.getAttribute('src')||'').split('/').pop(); }
+  function applyAll(){
+    var m = load();
+    document.querySelectorAll('img.repos').forEach(function(img){
+      var p = m[keyFor(img)];
+      if(p) img.style.objectPosition = p.x + '% ' + p.y + '%';
+    });
+  }
+  var drag = null;
+  document.addEventListener('pointerdown', function(e){
+    var img = e.target.closest && e.target.closest('img.repos');
+    if(!img) return;
+    e.preventDefault();
+    var m = load(); var cur = m[keyFor(img)] || {x:50,y:50};
+    drag = { img: img, startX: e.clientX, startY: e.clientY, ox: cur.x, oy: cur.y,
+             w: img.clientWidth || 1, h: img.clientHeight || 1 };
+    img.setPointerCapture && img.setPointerCapture(e.pointerId);
+  });
+  document.addEventListener('pointermove', function(e){
+    if(!drag) return;
+    var x = drag.ox - (e.clientX - drag.startX) / drag.w * 100;
+    var y = drag.oy - (e.clientY - drag.startY) / drag.h * 100;
+    x = Math.max(0, Math.min(100, x)); y = Math.max(0, Math.min(100, y));
+    drag.cx = x; drag.cy = y;
+    drag.img.style.objectPosition = x + '% ' + y + '%';
+  });
+  function endDrag(){
+    if(!drag) return;
+    if(drag.cx != null){ var m = load(); m[keyFor(drag.img)] = {x: Math.round(drag.cx), y: Math.round(drag.cy)}; save(m); }
+    drag = null;
+  }
+  document.addEventListener('pointerup', endDrag);
+  document.addEventListener('pointercancel', endDrag);
+  if(document.readyState !== 'loading') applyAll();
+  document.addEventListener('DOMContentLoaded', applyAll);
+  setTimeout(applyAll, 300);
+})();
+</script>
+</helmet>
+
+<nav class="nav" style="max-width:1200px;margin:0 auto;padding:16px clamp(20px,5vw,72px);gap:16px 22px;flex-wrap:wrap;">
+  <a href="index.html" class="nav-brand" style="text-decoration:none;color:var(--color-text);display:flex;align-items:center;gap:10px;">
+    <img src="uploads/urma-logo.png" alt="Urma logo" style="width:42px;height:42px;border-radius:50%;object-fit:cover;display:block;">
+  </a>
+  <a href="meni.html" style="font-size:15px;">Meni</a>
+  <a href="o-nama.html" aria-current="page" style="font-size:15px;color:var(--color-accent);">O nama</a>
+  <a href="kontakt.html" style="font-size:15px;">Kontakt</a>
+  <a href="kontakt.html" class="btn btn-primary" style="text-decoration:none;margin-left:auto;">Poruči tortu</a>
+</nav>
+
+<div style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,72px);">
+
+  <section style="position:relative;padding:clamp(28px,5vw,60px) 0 clamp(32px,4vw,48px);max-width:60ch;">
+    <div style="position:absolute;right:-140px;top:-80px;width:300px;height:300px;border-radius:50%;background:var(--color-accent-2-200);z-index:-1;"></div>
+    <span style="display:block;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin-bottom:14px;">Naša priča</span>
+    <h1 style="font-family:var(--font-heading);font-size:clamp(38px,5.4vw,68px);line-height:1.05;letter-spacing:-0.02em;margin:0;">Počelo je iz jedne činije urmi</h1>
+    <p style="font-size:18px;line-height:1.65;margin:24px 0 0;color:color-mix(in srgb, var(--color-text) 82%, transparent);">Urma je nastala iz uverenja da slatko ne mora da bude opterećenje. Tražili smo dezert koji hrani jednako koliko i raduje — i našli ga u sirovim, biljnim sastojcima.</p>
+  </section>
+
+  <figure style="margin:0;border-radius:calc(2 * var(--radius-lg));overflow:hidden;box-shadow:var(--shadow-lg);">
+    <img class="repos" src="uploads/IMG_7030.jpeg" alt="Poslastičarnica Urma" style="display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;">
+  </figure>
+
+  <section style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(28px,4vw,56px);padding:clamp(48px,7vw,88px) 0;">
+    <div>
+      <h2 style="font-family:var(--font-heading);font-size:26px;margin:0 0 12px;">Bez pečenja</h2>
+      <p style="font-size:15px;line-height:1.65;margin:0;color:color-mix(in srgb, var(--color-text) 78%, transparent);">Sve pripremamo na temperaturi do 42°C. Tako sastojci zadržavaju enzime, vlakna i punoću ukusa koje pečenje odnese.</p>
+    </div>
+    <div>
+      <h2 style="font-family:var(--font-heading);font-size:26px;margin:0 0 12px;">Prirodna slast</h2>
+      <p style="font-size:15px;line-height:1.65;margin:0;color:color-mix(in srgb, var(--color-text) 78%, transparent);">Urme, agava i zrelo voće daju svu slatkoću. Nikad beli šećer, nikad veštački zaslađivači.</p>
+    </div>
+    <div>
+      <h2 style="font-family:var(--font-heading);font-size:26px;margin:0 0 12px;">Sasvim biljno</h2>
+      <p style="font-size:15px;line-height:1.65;margin:0;color:color-mix(in srgb, var(--color-text) 78%, transparent);">Bez sastojaka životinjskog porekla, bez glutena i laktoze — dezert za svakoga za stolom.</p>
+    </div>
+  </section>
+
+  <section style="padding:0 0 clamp(48px,7vw,88px);">
+    <div style="background:var(--color-surface);border-radius:calc(2 * var(--radius-lg));padding:clamp(36px,5vw,64px);max-width:52ch;">
+      <p style="font-family:var(--font-heading);font-size:clamp(24px,3vw,34px);line-height:1.3;margin:0;text-indent:-0.5em;">„Verujemo da najbolji dezert ostavlja samo dobar osećaj — i pre i posle.”</p>
+      <p style="font-size:15px;margin:24px 0 0;color:color-mix(in srgb, var(--color-text) 70%, transparent);">— Tim poslastičarnice Urma</p>
+    </div>
+  </section>
+
+  <section style="padding:0 0 clamp(48px,7vw,88px);">
+    <h2 style="font-family:var(--font-heading);font-size:clamp(26px,3vw,38px);margin:0 0 28px;letter-spacing:-0.015em;">Galerija</h2>
+    <div class="galerija" style="display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:200px;gap:16px;">
+      <figure style="margin:0;grid-row:span 2;border-radius:var(--radius-lg);overflow:hidden;"><img class="repos" src="uploads/IMG_7021.jpeg" alt="" style="display:block;width:100%;height:100%;object-fit:cover;"></figure>
+      <figure style="margin:0;border-radius:var(--radius-lg);overflow:hidden;"><img class="repos" src="uploads/IMG_7023.png" alt="" style="display:block;width:100%;height:100%;object-fit:cover;"></figure>
+      <figure style="margin:0;border-radius:var(--radius-lg);overflow:hidden;"><img class="repos" src="uploads/IMG_7024.png" alt="" style="display:block;width:100%;height:100%;object-fit:cover;"></figure>
+      <figure style="margin:0;border-radius:var(--radius-lg);overflow:hidden;"><img class="repos" src="uploads/IMG_7025.png" alt="" style="display:block;width:100%;height:100%;object-fit:cover;"></figure>
+      <figure style="margin:0;grid-row:span 2;border-radius:var(--radius-lg);overflow:hidden;"><img class="repos" src="uploads/IMG_7029.png" alt="" style="display:block;width:100%;height:100%;object-fit:cover;"></figure>
+      <figure style="margin:0;border-radius:var(--radius-lg);overflow:hidden;"><img class="repos" src="uploads/IMG_7026.png" alt="" style="display:block;width:100%;height:100%;object-fit:cover;"></figure>
+      <figure style="margin:0;border-radius:var(--radius-lg);overflow:hidden;"><img class="repos" src="uploads/IMG_7027.png" alt="" style="display:block;width:100%;height:100%;object-fit:cover;"></figure>
+    </div>
+  </section>
+
+  <section style="padding:0 0 clamp(48px,7vw,88px);">
+    <div style="background:var(--color-accent-2-100);border-radius:calc(2 * var(--radius-lg));padding:clamp(32px,5vw,56px);display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;">
+      <h2 style="font-family:var(--font-heading);font-size:clamp(24px,3vw,34px);margin:0;letter-spacing:-0.015em;max-width:20ch;">Dođi da probaš prvi zalogaj</h2>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="meni.html" class="btn btn-primary" style="text-decoration:none;font-size:14px;padding:12px 22px;">Vidi meni</a>
+        <a href="kontakt.html" class="btn btn-secondary" style="text-decoration:none;font-size:14px;padding:12px 22px;">Kontakt</a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="padding:clamp(40px,5vw,64px) 0;border-top:1px solid var(--color-divider);display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:28px;">
+    <div>
+      <p style="font-family:var(--font-heading);font-size:22px;margin:0 0 8px;">Urma</p>
+      <p style="font-size:14px;line-height:1.6;margin:0;color:color-mix(in srgb, var(--color-text) 70%, transparent);max-width:26ch;">Sirovi veganski dezerti od prirodnih sastojaka.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;font-size:14px;">
+      <a href="index.html">Početna</a>
+      <a href="meni.html">Meni</a>
+      <a href="kontakt.html">Kontakt</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;font-size:14px;color:color-mix(in srgb, var(--color-text) 70%, transparent);">
+      <span>Vatroslava Jagića 14, Beograd</span>
+      <span>063 549 201</span>
+      <a href="https://instagram.com/urma_poslasticarnica" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+</body>
+</html>
